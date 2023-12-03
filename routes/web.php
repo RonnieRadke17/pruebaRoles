@@ -4,6 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\FuncCall;
 
+use App\Http\Controllers\UserController;
+
+//apartado de admin el cual le muestra todos los usuarios
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +24,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 // routes/web.php
-
+//aparentemente ya no es necesario usar la ruta del admin
 Route::get('/trabajador/dashboard', function(){
     return view('trabajador.dashboard');
 })->name('trabajador.dashboard');

@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
 
         // Modificación para redirigir según el rol del usuario
         if (Auth::user()->rol == 'administrador') {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('users.index');
         } elseif (Auth::user()->rol == 'trabajador') {
             return redirect()->route('trabajador.dashboard');
         } 
